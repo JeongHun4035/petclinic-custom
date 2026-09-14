@@ -1,0 +1,200 @@
+.owners-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  color: var(--text-primary);
+}
+
+.owners-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.owners-eyebrow {
+  margin: 0 0 8px;
+  color: #3b82f6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.owners-heading h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.02em;
+}
+
+.owners-description {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.owners-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.owners-toolbar .common-input {
+  width: min(360px, 100%);
+}
+
+.owners-count {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.owners-page .common-table {
+  table-layout: fixed;
+}
+
+.owners-page .common-table th:nth-child(1),
+.owners-page .common-table td:nth-child(1) {
+  width: 12%;
+}
+
+.owners-page .common-table th:nth-child(2),
+.owners-page .common-table td:nth-child(2) {
+  width: 18%;
+}
+
+.owners-page .common-table th:nth-child(3),
+.owners-page .common-table td:nth-child(3) {
+  width: 18%;
+}
+
+.owners-page .common-table th:nth-child(4),
+.owners-page .common-table td:nth-child(4) {
+  width: 28%;
+}
+
+.owners-page .common-table th:nth-child(5),
+.owners-page .common-table td:nth-child(5) {
+  width: 14%;
+}
+
+.owners-page .common-table th:nth-child(6),
+.owners-page .common-table td:nth-child(6) {
+  width: 8%;
+}
+
+.owners-page .common-table th:nth-child(7),
+.owners-page .common-table td:nth-child(7) {
+  width: 10%;
+}
+
+.owners-page .common-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.owners-page .common-table .common-table-expanded-row td {
+  padding: 8px;
+  white-space: normal;
+}
+
+.owners-page .common-accordion__content {
+  padding: 8px;
+}
+
+.owner-pets {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.owner-pet {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid rgba(97, 218, 251, 0.24);
+  border-radius: 10px;
+  background-color: var(--header-background);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.owner-pet p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.owner-pet p > span:first-child {
+  flex: 0 0 88px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.owner-pet p > strong,
+.owner-pet p > span:last-child {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.owner-pets-empty {
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.owner-pets-empty {
+  padding: 12px;
+}
+
+.owner-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.owner-status-active {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+.owner-status-pending {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+@media (max-width: 640px) {
+  .owners-page {
+    width: min(100% - 32px, 1180px);
+    padding: 32px 0 48px;
+  }
+
+  .owners-heading,
+  .owners-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .owners-heading .common-button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .owners-toolbar .common-input {
+    width: 100%;
+  }
+
+}

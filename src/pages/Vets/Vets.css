@@ -1,0 +1,64 @@
+.vets-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  color: var(--text-primary);
+}
+
+.vets-heading {
+  margin-bottom: 32px;
+}
+
+.vets-eyebrow {
+  margin: 0 0 8px;
+  color: #3b82f6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.vets-heading h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.vets-description {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.vets-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.vets-toolbar .common-input {
+  width: min(360px, 100%);
+}
+
+.vets-count {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .vets-page {
+    width: min(100% - 32px, 1180px);
+    padding: 32px 0 48px;
+  }
+
+  .vets-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .vets-toolbar .common-input {
+    width: 100%;
+  }
+}

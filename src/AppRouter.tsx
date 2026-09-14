@@ -8,7 +8,11 @@ import PopupPage from '@/pages/Examples/children/Popup'
 import SelectPage from '@/pages/Examples/children/Select'
 import ExampleDetail from '@/pages/Examples/ExampleDetail'
 import Examples from '@/pages/Examples/Examples'
+import MyPage from '@/pages/MyPage/MyPage'
+import Owners from '@/pages/Owners/Owners'
+import Pets from '@/pages/Pets/Pets'
 import SignIn from '@/pages/Sign/Sign-in'
+import Vets from '@/pages/Vets/Vets'
 import { ROUTE_PATHS } from '@/routes/route'
 
 const AppRouter = () => {
@@ -30,6 +34,22 @@ const AppRouter = () => {
         <Route
           path={ROUTE_PATHS.EXAMPLES}
           element={<Examples />}
+        />
+        <Route
+          path={ROUTE_PATHS.MY_PAGE}
+          element={<MyPage />}
+        />
+        <Route
+          path={ROUTE_PATHS.OWNERS}
+          element={<Owners />}
+        />
+        <Route
+          path={ROUTE_PATHS.PETS}
+          element={<Pets />}
+        />
+        <Route
+          path={ROUTE_PATHS.VETS}
+          element={<Vets />}
         />
         <Route path="/examples" element={<ExampleDetail />} >
           <Route

@@ -1,4 +1,4 @@
-import { n as __toESM, t as __commonJSMin } from "./rolldown-runtime-BPOCksWG.js";
+import { r as __toESM, t as __commonJSMin } from "./rolldown-runtime-DC62tzP2.js";
 import { t as require_react } from "./react.js";
 import { t as require_react_dom } from "./react-dom.js";
 //#region node_modules/.pnpm/react-router@7.18.2_react-d_ebd9f6aaf916bfadf05eff1070ce6f8a/node_modules/react-router/dist/development/chunk-62JRHF6Z.mjs

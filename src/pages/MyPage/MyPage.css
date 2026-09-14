@@ -1,0 +1,16 @@
+.my-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  color: var(--text-primary);
+}
+
+.my-page h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.my-page p {
+  margin: 0;
+  color: var(--text-secondary);
+}

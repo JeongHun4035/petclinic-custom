@@ -1,0 +1,83 @@
+.common-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background-color: var(--surface);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.common-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  color: var(--text-primary);
+  font-size: 14px;
+  text-align: left;
+}
+
+.common-table th {
+  padding: 15px 20px;
+  background-color: var(--header-background);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.common-table td {
+  padding: 17px 20px;
+  border-top: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.common-table tbody > tr:not(.common-table-expanded-row) > td {
+  text-align: center;
+}
+
+.common-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.common-table tbody tr:hover {
+  background-color: var(--hover-background);
+}
+
+.common-table-expand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  background-color: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.common-table-expand-button:hover {
+  color: var(--text-primary);
+  background-color: var(--hover-background);
+}
+
+.common-table-expanded-row:hover {
+  background-color: transparent !important;
+}
+
+.common-table-expanded-row > td {
+  white-space: normal;
+}
+
+.common-table-empty {
+  padding: 48px 20px !important;
+  color: var(--text-muted);
+  text-align: center;
+}

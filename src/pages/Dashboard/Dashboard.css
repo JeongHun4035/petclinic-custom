@@ -1,11 +1,117 @@
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    color: #fffaf7;
+    background: linear-gradient(135deg, #121318, #28212b);
+    font-family: Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 }
 
-.dashboard h1 {
-    font-size: 2rem;
-    margin-top: 2rem;
+.dashboard-sector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 86vh;
+    overflow: hidden;
+    padding: 80px clamp(24px, 8vw, 120px);
+    isolation: isolate;
+}
+
+.dashboard-sector::before,
+.dashboard-sector::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: '';
+}
+
+.dashboard-sector::before {
+    z-index: -2;
+    background: var(--dashboard-sector-color);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.14);
+}
+
+.dashboard-sector::after {
+    background-image: var(--dashboard-sector-image);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.06;
+    transform: scale(1.06);
+    transition: opacity 1400ms ease, transform 1800ms ease;
+}
+
+.dashboard-sector.is-visible::after {
+    opacity: 0.52;
+    transform: scale(1);
+}
+
+.dashboard-sector--companion {
+    --dashboard-sector-color: #28232d;
+}
+
+.dashboard-sector--care {
+    --dashboard-sector-color: #2c252b;
+}
+
+.dashboard-sector--joy {
+    --dashboard-sector-color: #30272a;
+}
+
+.dashboard-sector__content {
+    width: min(620px, 100%);
+    padding: clamp(32px, 5vw, 60px);
+    border-left: 3px solid #f2a69a;
+    background: rgba(15, 16, 24, 0.56);
+    backdrop-filter: blur(4px);
+}
+
+.dashboard-sector__label {
+    margin: 0 0 20px;
+    color: #ffc8bc;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.dashboard-sector h1 {
+    max-width: 680px;
+    margin: 0 0 24px;
+    color: #fffaf7;
+    font-family: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, serif;
+    font-size: clamp(28px, 4.6vw, 52px);
+    font-weight: 700;
+    line-height: 1.08;
+    text-wrap: balance;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, 0.22);
+}
+
+.dashboard-sector__content p:last-child {
+    max-width: 500px;
+    margin: 0;
+    color: #d2cbcd;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.9;
+    text-wrap: pretty;
+}
+
+@media (max-width: 760px) {
+    .dashboard-sector {
+        min-height: 78vh;
+        padding: 56px 20px;
+    }
+
+    .dashboard-sector__content {
+        padding: 28px;
+    }
+
+    .dashboard-sector__label {
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+
+    .dashboard-sector h1 {
+        margin-bottom: 18px;
+        font-size: clamp(26px, 8.5vw, 38px);
+    }
 }

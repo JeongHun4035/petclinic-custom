@@ -1,4 +1,4 @@
-import { t as GenIcon } from "./iconBase-DXRaV-Ot.js";
+import { t as GenIcon } from "./iconBase-DRmWPHxZ.js";
 //#region node_modules/.pnpm/react-icons@5.7.0_react@19.2.8/node_modules/react-icons/bs/index.mjs
 function BsFillXSquareFill(props) {
 	return GenIcon({

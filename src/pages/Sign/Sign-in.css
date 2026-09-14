@@ -24,13 +24,12 @@
 /* Header */
 .signin-logo {
   display: flex;
-  margin-left: 30px;
-  margin-right: 10px;
+  justify-content: center;
   width: 100%;
 }
 
 .signin-logo img {
-  width: 220px;
+  width: 320px;
   height: auto;
   object-fit: contain;
   user-select: none;
@@ -39,8 +38,70 @@
 
 /* Input */
 
+.user-type-toggle {
+  display: flex;
+  width: 100%;
+  padding: 4px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+}
+
+.user-type-button {
+  flex: 1;
+  height: 40px;
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #6b7280;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.user-type-button.common-button-primary:not(.is-active):hover {
+  background-color: #e5e7eb;
+  color: #111827;
+  transform: none;
+}
+
+.user-type-button.is-active {
+  background-color: #ffffff;
+  color: #111827;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.user-type-button.common-button-primary.is-active:hover {
+  background-color: #ffffff;
+  transform: none;
+}
+
+.user-type-button:active {
+  transform: none;
+}
+
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.input-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.common-button.signup-button {
+  background-color: #f3f7f2;
+  border-color: #a8bda9;
+  color: #48634f;
+}
+
+.common-button.signup-button:hover:not(:disabled) {
+  background-color: #e8f0e8;
+  color: #3d5744;
 }
