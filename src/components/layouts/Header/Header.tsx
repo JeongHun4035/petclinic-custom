@@ -9,6 +9,21 @@ import useTheme from '@/hooks/useTheme'
 import { ROUTE_PATHS } from '@/routes/route'
 
 import type { HeaderItemProps } from '@/types/interfaces/layouts'
+import type { AuthUser } from '@/types/interfaces/services'
+
+const getStoredUser = (): AuthUser | null => {
+  const storedUser = localStorage.getItem('user')
+
+  if (!storedUser) {
+    return null
+  }
+
+  try {
+    return JSON.parse(storedUser) as AuthUser
+  } catch {
+    return null
+  }
+}
 
 const HeaderItem: React.FC = () => {
   const navigate = useNavigate()
@@ -70,6 +85,14 @@ const ThemeToggle: React.FC = () => {
 
 const LayoutHeader: React.FC = () => {
   const navigate = useNavigate()
+  const user = getStoredUser()
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('tokenInfo')
+    localStorage.removeItem('user')
+    navigate(ROUTE_PATHS.SIGN_IN)
+  }
 
   return (
     <header className="header-area">
@@ -89,6 +112,9 @@ const LayoutHeader: React.FC = () => {
       </div>
 
       <div className="header-items">
+        <p className="header-greeting">
+          안녕하세요, {user?.username ?? '사용자'}님
+        </p>
         <div
           className="header-item"
           onClick={() => navigate('/my-page')}
@@ -97,7 +123,7 @@ const LayoutHeader: React.FC = () => {
         </div>
         <div
           className="header-item"
-          onClick={() => navigate('/sign-in')}
+          onClick={handleLogout}
         >
           <span>로그아웃</span>
         </div>

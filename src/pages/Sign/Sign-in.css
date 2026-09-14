@@ -38,6 +38,12 @@
 
 /* Input */
 
+.userInput-form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .user-type-toggle {
   display: flex;
   width: 100%;
@@ -87,12 +93,20 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .input-footer {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.signin-error {
+  margin: -8px 0 0;
+  color: #b91c1c;
+  font-size: 13px;
+  text-align: center;
 }
 
 .common-button.signup-button {
