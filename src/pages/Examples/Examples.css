@@ -1,0 +1,12 @@
+.examples-container {
+  display: flex;
+}
+
+.example-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-item {
+  cursor: pointer;
+}
