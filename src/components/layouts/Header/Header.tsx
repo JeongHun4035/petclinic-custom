@@ -7,49 +7,40 @@ import { useNavigate } from 'react-router-dom'
 import favicon from '@/assets/favicon.png'
 import useTheme from '@/hooks/useTheme'
 import { ROUTE_PATHS } from '@/routes/route'
+import { canManageResources, clearAuthStorage, getStoredUser } from '@/utils/auth'
 
 import type { HeaderItemProps } from '@/types/interfaces/layouts'
-import type { AuthUser } from '@/types/interfaces/services'
-
-const getStoredUser = (): AuthUser | null => {
-  const storedUser = localStorage.getItem('user')
-
-  if (!storedUser) {
-    return null
-  }
-
-  try {
-    return JSON.parse(storedUser) as AuthUser
-  } catch {
-    return null
-  }
-}
 
 const HeaderItem: React.FC = () => {
   const navigate = useNavigate()
+  const user = getStoredUser()
+  const canManage = canManageResources(user)
 
   const headerItems: HeaderItemProps[] = [
     {
       id: 1,
-      name: '보호자',
+      name: canManage ? '보호자 관리' : '보호자 목록',
       path: '/owners',
     },
     {
       id: 2,
-      name: '반려 동물',
+      name: canManage ? '반려동물 관리' : '반려동물 목록',
       path: ROUTE_PATHS.PETS,
     },
     {
       id: 3,
-      name: '수의사',
+      name: canManage ? '수의사 관리' : '수의사 목록',
       path: ROUTE_PATHS.VETS,
     },
-    {
+  ]
+
+  if (canManage) {
+    headerItems.push({
       id: 4,
       name: '관리',
       path: ROUTE_PATHS.MANAGEMENT,
-    },
-  ]
+    })
+  }
 
   return (
     <div className="header-items">
@@ -88,9 +79,7 @@ const LayoutHeader: React.FC = () => {
   const user = getStoredUser()
 
   const handleLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('tokenInfo')
-    localStorage.removeItem('user')
+    clearAuthStorage()
     navigate(ROUTE_PATHS.SIGN_IN)
   }
 

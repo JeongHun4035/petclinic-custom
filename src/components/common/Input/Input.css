@@ -5,7 +5,7 @@
 }
 
 .common-input__label {
-  color: #374151;
+  color: var(--text-primary);
 
   font-size: 14px;
   font-weight: 600;
@@ -18,10 +18,10 @@
 
   box-sizing: border-box;
 
-  color: #111827;
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--surface);
 
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   outline: none;
 
@@ -33,18 +33,18 @@
 }
 
 .common-input__field::placeholder {
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .common-input__field:focus {
-  border-color: #61dafb;
+  border-color: var(--primary);
 
   box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.18);
 }
 
 .common-input__field:disabled {
-  color: #9ca3af;
-  background-color: #f3f4f6;
+  color: var(--text-muted);
+  background-color: var(--hover-background);
 
   cursor: not-allowed;
 }

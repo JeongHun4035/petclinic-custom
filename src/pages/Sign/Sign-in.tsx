@@ -5,6 +5,7 @@ import { axiosRequest } from '@/api/axios'
 import petClinicLogo from '@/assets/pet-clinic-logo.png'
 import Button from '@/components/common/Button/Button'
 import Input from '@/components/common/Input/Input'
+import { clearAuthStorage } from '@/utils/auth'
 
 import type { AuthResponse, AuthUser } from '@/types/interfaces/services'
 
@@ -42,9 +43,7 @@ const UserInfoForm: React.FC = () => {
       localStorage.setItem('user', JSON.stringify(meResponse.data))
       navigate('/dash-board')
     } catch {
-      localStorage.removeItem('token')
-      localStorage.removeItem('tokenInfo')
-      localStorage.removeItem('user')
+      clearAuthStorage()
       setErrorMessage('아이디 또는 비밀번호를 확인해주세요.')
     } finally {
       setIsLoading(false)
