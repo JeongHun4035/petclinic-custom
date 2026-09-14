@@ -96,6 +96,26 @@
   gap: 8px;
 }
 
+.userInput-form .common-input__label {
+  color: #334155;
+}
+
+.userInput-form .common-input__field {
+  color: #1f2937;
+  background-color: #f8fafc;
+  border-color: #dbe3ea;
+}
+
+.userInput-form .common-input__field::placeholder {
+  color: #94a3b8;
+}
+
+.userInput-form .common-input__field:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
 .input-footer {
   display: flex;
   flex-direction: column;
