@@ -4,8 +4,8 @@
   justify-content: center;
 
   width: 100%;
-  min-height: 104px;
-  padding: 24px;
+  min-height: 116px;
+  padding: 28px 24px;
 
   box-sizing: border-box;
 
@@ -24,7 +24,7 @@
 
 .footer-content {
   width: 100%;
-  max-width: 960px;
+  max-width: 1120px;
   text-align: center;
 }
 
@@ -41,6 +41,11 @@
   color: var(--text-secondary);
   font-size: 12px;
   line-height: 1.6;
+}
+
+.footer-notice + .footer-notice {
+  margin-top: 6px;
+  color: var(--text-muted);
 }
 
 @media (max-width: 600px) {

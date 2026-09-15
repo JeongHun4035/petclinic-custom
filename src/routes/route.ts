@@ -7,6 +7,7 @@ export const ROUTE_PATHS = {
   PETS: '/pets',
   VETS: '/vets',
   MANAGEMENT: '/management',
+  APPOINTMENTS: '/appointments',
 } as const
 
 export type RouteKey = keyof typeof ROUTE_PATHS
@@ -67,6 +68,12 @@ export const APP_ROUTES: AppRouteMeta[] = [
     key: 'MANAGEMENT',
     path: ROUTE_PATHS.MANAGEMENT,
     label: '관리',
+    showInNav: true,
+  },
+  {
+    key: 'APPOINTMENTS',
+    path: ROUTE_PATHS.APPOINTMENTS,
+    label: '예약',
     showInNav: true,
   },
 

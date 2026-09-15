@@ -2,6 +2,9 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background:
+    radial-gradient(circle at 8% 0%, var(--surface-accent), transparent 26rem),
+    var(--background);
 }
 
 .header {
@@ -11,8 +14,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
 }
 

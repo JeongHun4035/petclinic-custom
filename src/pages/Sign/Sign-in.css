@@ -3,7 +3,10 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 24px;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(96, 165, 250, 0.22), transparent 22rem),
+    linear-gradient(145deg, #eef5ff, #f8fafc 55%, #edf6f4);
 }
 
 .userInput-form {
@@ -11,14 +14,14 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  max-width: 400px;
-  padding: 40px;
+  max-width: 440px;
+  padding: clamp(28px, 5vw, 48px);
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   box-shadow:
     0 4px 6px rgba(0, 0, 0, 0.02),
-    0 12px 32px rgba(0, 0, 0, 0.06);
+    0 20px 48px rgba(15, 23, 42, 0.1);
 }
 
 /* Header */

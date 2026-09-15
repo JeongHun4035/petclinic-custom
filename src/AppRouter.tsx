@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 
 import Layout from '@/layouts/Layout/Layout'
 import NotFound from '@/NotFound'
+import Appointments from '@/pages/Appointments/Appointments'
 import Dashboard from '@/pages/Dashboard/Dashboard'
 import ConfirmPage from '@/pages/Examples/children/Confirm'
 import PopupPage from '@/pages/Examples/children/Popup'
@@ -50,6 +51,10 @@ const AppRouter = () => {
         <Route
           path={ROUTE_PATHS.VETS}
           element={<Vets />}
+        />
+        <Route
+          path={ROUTE_PATHS.APPOINTMENTS}
+          element={<Appointments />}
         />
         <Route path="/examples" element={<ExampleDetail />} >
           <Route

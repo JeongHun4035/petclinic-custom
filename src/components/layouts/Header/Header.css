@@ -20,6 +20,7 @@
     color 0.25s ease,
     background-color 0.25s ease,
     border-color 0.25s ease;
+  backdrop-filter: blur(14px);
 }
 
 .header-items {
@@ -70,8 +71,32 @@
 }
 
 @media (max-width: 760px) {
+  .header-area {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .header-left,
+  .header-items {
+    width: 100%;
+  }
+
+  .header-left {
+    overflow-x: auto;
+  }
+
+  .header-items {
+    justify-content: flex-end;
+  }
+
   .header-greeting {
     display: none;
+  }
+
+  .header-item {
+    min-width: max-content;
   }
 }
 

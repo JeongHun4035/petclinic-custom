@@ -32,6 +32,11 @@ const HeaderItem: React.FC = () => {
       name: canManage ? '수의사 관리' : '수의사 목록',
       path: ROUTE_PATHS.VETS,
     },
+    {
+      id: 5,
+      name: '예약',
+      path: ROUTE_PATHS.APPOINTMENTS,
+    },
   ]
 
   if (canManage) {

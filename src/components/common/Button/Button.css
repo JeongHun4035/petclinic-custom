@@ -4,10 +4,10 @@
   justify-content: center;
   width: auto;
 
-  margin: 4px;
+  margin: 0;
 
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-weight: 600;
   cursor: pointer;
   box-sizing: border-box;
@@ -58,6 +58,7 @@
 
 .common-button-primary:hover:not(:disabled) {
   background-color: var(--button-primary-hover);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
 }
 
 /* Secondary */
@@ -116,7 +117,7 @@
 
 /* Hover */
 .common-button:hover:not(:disabled) {
-  transform: scale(1.03);
+  transform: translateY(-1px);
 }
 
 /* Click */

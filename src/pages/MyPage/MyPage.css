@@ -1,13 +1,14 @@
 .my-page {
-  max-width: 1120px;
+  width: min(920px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: clamp(40px, 7vw, 88px) 0;
   color: var(--text-primary);
 }
 
 .my-page h1 {
   margin: 0 0 12px;
-  font-size: 28px;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -0.03em;
 }
 
 .my-page p {
