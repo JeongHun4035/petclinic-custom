@@ -6,6 +6,7 @@ import Input from '@/components/common/Input/Input'
 import Popup from '@/components/common/Popup/Popup'
 import Table from '@/components/common/Table/Table'
 import { canManageResources, getStoredUser } from '@/utils/auth'
+import { formatPhoneNumber, normalizePhoneNumber } from '@/utils/phone'
 
 import type { Owner } from '@/types/interfaces/services'
 
@@ -88,7 +89,7 @@ const OwnerRegistrationForm = ({
         lastName: formValues.lastName,
         address: formValues.address,
         city: formValues.city,
-        telephone: formValues.telephone,
+        telephone: normalizePhoneNumber(formValues.telephone ?? ''),
       })
       onSuccess()
       onClose()
@@ -105,7 +106,18 @@ const OwnerRegistrationForm = ({
       <Input id="owner-last-name" label="성" required value={formValues.lastName ?? ''} onChange={value => updateValue('lastName', value)} />
       <Input id="owner-address" label="주소" required value={formValues.address ?? ''} onChange={value => updateValue('address', value)} />
       <Input id="owner-city" label="도시" required value={formValues.city ?? ''} onChange={value => updateValue('city', value)} />
-      <Input id="owner-telephone" label="전화번호" required pattern="[0-9]{10}" value={formValues.telephone ?? ''} onChange={value => updateValue('telephone', value)} />
+      <Input
+        id="owner-telephone"
+        label="전화번호"
+        type="tel"
+        required
+        inputMode="numeric"
+        pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+        maxLength={13}
+        placeholder="010-1234-5678"
+        value={formValues.telephone ?? ''}
+        onChange={value => updateValue('telephone', formatPhoneNumber(value))}
+      />
       {errorMessage ? <p className="registration-error">{errorMessage}</p> : null}
       <div className="registration-actions">
         <Button type="button" variant="outline" onClick={onClose}>취소</Button>
